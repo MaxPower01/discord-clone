@@ -1,8 +1,4 @@
 <template>
-  <div class="about">
-    <h1>This is an about page</h1>
-  </div>
-
   <Input v-model="event.description" :label="event.description" type="text" />
 </template>
 
@@ -17,7 +13,7 @@ export default defineComponent({
       event: {
         category: "",
         title: "",
-        description: "My event description",
+        description: "Event description",
         location: "",
         pets: 1,
         extras: {
