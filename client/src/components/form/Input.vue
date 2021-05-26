@@ -1,11 +1,16 @@
 <template>
   <label v-if="label">{{ label }}</label>
-  <input
+  <el-input
+    v-bind="$attrs"
+    :placeholder="label"
+    @input="$emit('update:modelValue', $event.target.value)"
+  ></el-input>
+  <!-- <input
     v-bind="$attrs"
     :value="modelValue"
     :placeholder="label"
     @input="$emit('update:modelValue', $event.target.value)"
-  />
+  /> -->
 </template>
 
 <script lang="ts">

@@ -1,6 +1,5 @@
 <template>
-  <h1>Signin</h1>
-
+  <h1>Signup</h1>
   <Input v-model="event.description" :label="event.description" type="text" />
 </template>
 

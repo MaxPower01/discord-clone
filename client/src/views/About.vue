@@ -3,7 +3,7 @@
     <h1>This is an about page</h1>
   </div>
 
-  <Input v-model="event.description" :label="event.description" type="text" />
+  <Input v-model="label" :label="label" type="text" />
 </template>
 
 <script lang="ts">
@@ -14,17 +14,7 @@ export default defineComponent({
   components: { Input },
   data() {
     return {
-      event: {
-        category: "",
-        title: "",
-        description: "My event description",
-        location: "",
-        pets: 1,
-        extras: {
-          catering: false,
-          music: false
-        }
-      }
+      label: "Label of the input"
     }
   }
 })
