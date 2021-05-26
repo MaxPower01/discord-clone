@@ -1,0 +1,12 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "npm",
+			"script": "install",
+			"problemMatcher": [],
+			"label": "npm: install",
+			"detail": "(npm install -g typescript) && (npm install -g gulp-cli) && (npm install -g nodemon) && (cd client && npm install)"
+		}
+	]
+}

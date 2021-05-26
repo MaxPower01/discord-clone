@@ -1,0 +1,24 @@
+{
+  "name": "discord-clone",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "install": "(npm install -g typescript) && (npm install -g gulp-cli) && (npm install -g nodemon) && (cd client && npm install)",
+    "dev": "(cd common && gulp setDevelopmentEnvironment && gulp cleanOutputDirectories && gulp generateTypescriptFiles) && (cd ..) && (concurrently \"cd common && npm run dev\" \"cd api && npm run dev\" \"cd client && npm run dev\" )",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MaxPower01/discord-clone.git"
+  },
+  "author": "Maxime Manseau",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MaxPower01/discord-clone/issues"
+  },
+  "homepage": "https://github.com/MaxPower01/discord-clone#readme",
+  "dependencies": {
+    "concurrently": "^6.2.0"
+  }
+}
