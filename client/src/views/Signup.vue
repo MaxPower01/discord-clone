@@ -1,6 +1,21 @@
 <template>
   <h1>Signup</h1>
-  <Input v-model="event.description" :label="event.description" type="text" />
+  <Input
+    v-model="formData.username"
+    :label="inputLabel.username"
+    type="username"
+  />
+  <Input v-model="formData.email" :label="inputLabel.email" type="email" />
+  <Input
+    v-model="formData.password"
+    :label="inputLabel.password"
+    type="password"
+  />
+  <Input
+    v-model="formData.confirmPassword"
+    :label="inputLabel.confirmPassword"
+    type="password"
+  />
 </template>
 
 <script lang="ts">
@@ -11,16 +26,17 @@ export default defineComponent({
   components: { Input },
   data() {
     return {
-      event: {
-        category: "",
-        title: "",
-        description: "Event description",
-        location: "",
-        pets: 1,
-        extras: {
-          catering: false,
-          music: false
-        }
+      inputLabel: {
+        username: "Username",
+        email: "Email",
+        password: "Password",
+        confirmPassword: "Confirm password"
+      },
+      formData: {
+        username: "",
+        email: "",
+        password: "",
+        confirmPassword: ""
       }
     }
   }

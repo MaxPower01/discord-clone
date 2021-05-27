@@ -2,6 +2,7 @@
   <label v-if="label">{{ label }}</label>
   <el-input
     v-bind="$attrs"
+    :value="modelValue"
     :placeholder="label"
     @input="$emit('update:modelValue', $event.target.value)"
   ></el-input>
