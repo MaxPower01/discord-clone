@@ -1,5 +1,5 @@
 import DatabaseService from "./services/database-service";
-import express from "express";
+// import express from "express";
 
 DatabaseService.connect()
   .then((connection) => {

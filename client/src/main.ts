@@ -5,6 +5,8 @@ import router from "./router"
 import store from "./store"
 import ElementPlus from "element-plus"
 import "element-plus/lib/theme-chalk/index.css"
+import env from "./env"
+console.log(env)
 
 createApp(App)
   .use(store)

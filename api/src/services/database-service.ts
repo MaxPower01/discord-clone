@@ -1,6 +1,7 @@
 import { MongoClientOptions } from "mongodb";
 import mongoose, { Connection as MongoDbConnection } from "mongoose";
 import MongoStore from "connect-mongo";
+import env from "../env";
 
 interface DbConnection extends MongoDbConnection {}
 
@@ -29,9 +30,9 @@ export default class DatabaseService {
         useUnifiedTopology: true,
       };
 
-      const DB_URI = "";
-      // const { DB_URI } = env;
-      // if (DB_URI.trim() === "") return reject("DB_URI is empty");
+      const { DB_URI } = env;
+      if (DB_URI == null || DB_URI.trim() === "")
+        return reject("DB_URI is empty");
 
       try {
         const connection = await mongoose.createConnection(DB_URI, options);
