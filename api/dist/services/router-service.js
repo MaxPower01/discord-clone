@@ -13,6 +13,7 @@ const database_service_1 = require("./database-service");
 const password_service_1 = __importDefault(require("./password-service"));
 const routes_1 = require("../common/enums/routes");
 const signup_1 = __importDefault(require("../handlers/signup"));
+const signin_1 = __importDefault(require("../handlers/signin"));
 class RouterService {
     constructor() {
         this._baseRouter = null;
@@ -105,6 +106,7 @@ class RouterService {
     static registerRoutes() {
         const { baseRouter: router } = RouterService;
         router.post(routes_1.ApiRoute.Signup, signup_1.default.handlePost);
+        router.post(routes_1.ApiRoute.Signin, signin_1.default.handlePost);
     }
 }
 exports.default = RouterService;

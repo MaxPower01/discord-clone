@@ -8,6 +8,7 @@ import { DatabaseService } from "./database-service";
 import PasswordService from "./password-service";
 import { ApiRoute as Route } from "../common/enums/routes";
 import Signup from "../handlers/signup";
+import Signin from "../handlers/signin";
 
 export default class RouterService {
   private static _instance: RouterService;
@@ -118,5 +119,6 @@ export default class RouterService {
     const { baseRouter: router } = RouterService;
 
     router.post(Route.Signup, Signup.handlePost);
+    router.post(Route.Signin, Signin.handlePost);
   }
 }

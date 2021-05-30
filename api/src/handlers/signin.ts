@@ -1,13 +1,13 @@
 import { RequestHandler } from "express";
 // import { v4 as uuid } from "uuid";
-import { schema } from "../common/schemas/api/Signup/jsonSchema";
-import { Schema } from "../common/schemas/api/Signup/schema";
+import { schema } from "../common/schemas/api/Signin/jsonSchema";
+import { Schema } from "../common/schemas/api/Signin/schema";
 import ValidationService from "../common/services/validation-service";
 import { DatabaseService } from "../services/database-service";
 import JsonService from "../services/json-service";
 import PasswordService from "../services/password-service";
 
-export default class Signup {
+export default class Signin {
   private constructor() {}
 
   public static handlePost: RequestHandler = async (req, res) => {
@@ -24,39 +24,43 @@ export default class Signup {
           })
         );
 
-      const { username } = data;
-      const { UserModel } = DatabaseService;
+      const { username, password } = data;
 
-      // const UserModel = await DatabaseService.getModel<DatabaseSchema.User>();
-      if ((await UserModel.findOne({ username })) !== null)
-        return res.status(409).json(
+      const { UserModel } = DatabaseService;
+      const user = await UserModel.findOne({ username });
+
+      if (user === null)
+        return res.status(401).json(
           JsonService.createJsonResponse({
             success: false,
-            msg: "Ce nom d'utilisateur n'est pas disponible",
+            msg: "Aucun utilisateur ne concorde à cet identifiant",
           })
         );
 
-      console.log(`Creating user "${username}"...`);
-
-      const { hash, salt } = await PasswordService.hashPassword(data.password);
-
-      const user = await new UserModel({
-        username,
+      const { hash, salt } = user;
+      const validPassword = await PasswordService.verifyPasswordHash(
+        password,
         hash,
-        salt,
-      }).save();
+        salt
+      );
 
-      console.log(`Succesfully created user "${username}"`);
+      if (validPassword)
+        return res.status(200).json(
+          JsonService.createJsonResponse({
+            success: true,
+            extraParams: [
+              {
+                name: "user",
+                value: user,
+              },
+            ],
+          })
+        );
 
-      return res.status(200).json(
+      return res.status(401).json(
         JsonService.createJsonResponse({
-          success: true,
-          extraParams: [
-            {
-              name: "user",
-              value: user,
-            },
-          ],
+          success: false,
+          msg: "Le mot de passe est incorrect",
         })
       );
     } catch (error) {

@@ -55,4 +55,4 @@ Signup.handlePost = async (req, res) => {
         }));
     }
 };
-//# sourceMappingURL=signup.js.map
+//# sourceMappingURL=signup%20copy.js.map

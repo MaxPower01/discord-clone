@@ -79,10 +79,6 @@ export class DatabaseService {
     if (connection === null) throw new Error("Database connection is null");
     if (instance._UserModel == null) {
       const schema = new mongoose.Schema({
-        id: {
-          type: String,
-          required: true,
-        },
         username: {
           type: String,
           required: true,
