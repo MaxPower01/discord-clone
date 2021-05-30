@@ -3,6 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.DatabaseService = void 0;
 const mongoose_1 = __importDefault(require("mongoose"));
 const connect_mongo_1 = __importDefault(require("connect-mongo"));
 const env_1 = __importDefault(require("../env"));
@@ -16,14 +17,21 @@ class DatabaseService {
             DatabaseService._instance = new DatabaseService();
         return DatabaseService._instance;
     }
-    get connection() {
-        return this._connection;
+    static get connection() {
+        const { instance } = DatabaseService;
+        return instance._connection;
     }
-    get sessionStore() {
-        return this._sessionStore;
+    static get sessionStore() {
+        const { instance } = DatabaseService;
+        return instance._sessionStore;
+    }
+    static getModel() {
+        return new Promise((resolve, reject) => {
+            return reject();
+        });
     }
 }
-exports.default = DatabaseService;
+exports.DatabaseService = DatabaseService;
 DatabaseService.createConnection = () => {
     return new Promise(async (resolve, reject) => {
         const options = {
@@ -32,11 +40,12 @@ DatabaseService.createConnection = () => {
         };
         const { DB_URI } = env_1.default;
         if (DB_URI == null || DB_URI.trim() === "")
-            return reject("DB_URI is empty");
+            return reject("DB_URI is null or empty");
         try {
+            const { instance } = DatabaseService;
             const connection = await mongoose_1.default.createConnection(DB_URI, options);
-            DatabaseService.instance._connection = connection;
-            DatabaseService.instance._sessionStore = new connect_mongo_1.default({
+            instance._connection = connection;
+            instance._sessionStore = new connect_mongo_1.default({
                 collectionName: "sessions",
                 client: connection.getClient(),
             });
@@ -50,10 +59,9 @@ DatabaseService.createConnection = () => {
 DatabaseService.connect = () => {
     console.log("Connecting to database...");
     return new Promise(async (resolve, reject) => {
-        const { connection } = DatabaseService.instance;
-        if (connection !== null) {
+        if (DatabaseService.connection !== null) {
             console.log("Successfully connected using an existing connection");
-            return resolve(connection);
+            return resolve(DatabaseService.connection);
         }
         try {
             const newConnection = await DatabaseService.createConnection();

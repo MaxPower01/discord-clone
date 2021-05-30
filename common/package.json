@@ -12,6 +12,7 @@
   "license": "ISC",
   "dependencies": {
     "@types/uuid": "^8.3.0",
+    "ajv": "^8.5.0",
     "dotenv": "^10.0.0",
     "fs": "0.0.1-security",
     "gulp": "^4.0.2",

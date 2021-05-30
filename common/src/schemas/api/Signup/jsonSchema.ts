@@ -1,0 +1,1 @@
+export const schema = {"type":"object","properties":{"username":{"type":"string"},"email":{"type":"string"},"password":{"type":"string"},"confirmPassword":{"type":"string"}},"required":["confirmPassword","email","password","username"],"$schema":"http://json-schema.org/draft-07/schema#"}

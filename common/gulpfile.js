@@ -35,9 +35,7 @@ const generateJsonSchemas = () => {
           const typeDirName = splittedPath[splittedPath.length - 2];
           const typeName = "Schema";
 
-          console.log(
-            `\nGenerating json schema from "${file.path}" for type "${typeName}" in folder "${typeDirName}"...`
-          );
+          console.log(`\nGenerating json schema from "${file.path}"...`);
 
           const settings = {
             required: true,
@@ -56,7 +54,7 @@ const generateJsonSchemas = () => {
           const schema = TJS.generateSchema(program, typeName, settings);
 
           console.log(
-            `Successfully generated json schema for type "${typeName}"`
+            `Successfully generated json schema for "${typeDirName}"`
           );
 
           return `export const schema = ${JSON.stringify(schema)}`;

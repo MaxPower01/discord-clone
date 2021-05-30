@@ -7,6 +7,29 @@
 			"problemMatcher": [],
 			"label": "npm: install",
 			"detail": "(npm install -g typescript) && (npm install -g gulp-cli) && (npm install -g nodemon) && (cd client && npm install)"
+		},
+		{
+			"type": "npm",
+			"script": "dev",
+			"problemMatcher": [],
+			"label": "npm: dev",
+			"detail": "(cd common && gulp cleanOutputDirectories && gulp generateTypescriptFiles) && (cd ..) && (concurrently  \"vue ui\" \"cd common && npm run dev\" \"cd api && npm run dev\" \"cd client && npm run dev\" )"
+		},
+		{
+			"type": "npm",
+			"script": "dev",
+			"path": "common/",
+			"problemMatcher": [],
+			"label": "npm: dev - common",
+			"detail": "gulp"
+		},
+		{
+			"type": "npm",
+			"script": "dev",
+			"path": "api/",
+			"problemMatcher": [],
+			"label": "npm: dev - api",
+			"detail": "(tsc) && (concurrently \"tsc --watch\" \"nodemon dist/main.js\")"
 		}
 	]
 }

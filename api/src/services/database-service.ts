@@ -3,27 +3,31 @@ import mongoose, { Connection as MongoDbConnection } from "mongoose";
 import MongoStore from "connect-mongo";
 import env from "../env";
 
-interface DbConnection extends MongoDbConnection {}
+interface DatabaseConnection extends MongoDbConnection {}
 
-export default class DatabaseService {
+export class DatabaseService {
   private static _instance: DatabaseService;
-  public static get instance(): DatabaseService {
+  private static get instance(): DatabaseService {
     if (!DatabaseService._instance)
       DatabaseService._instance = new DatabaseService();
     return DatabaseService._instance;
   }
 
-  private _connection: DbConnection | null = null;
-  public get connection(): DbConnection | null {
-    return this._connection;
+  private _connection: DatabaseConnection | null = null;
+  public static get connection(): DatabaseConnection | null {
+    const { instance } = DatabaseService;
+    return instance._connection;
   }
 
   private _sessionStore: MongoStore | null = null;
-  public get sessionStore(): MongoStore | null {
-    return this._sessionStore;
+  public static get sessionStore(): MongoStore | null {
+    const { instance } = DatabaseService;
+    return instance._sessionStore;
   }
 
-  private static createConnection = (): Promise<DbConnection> => {
+  private constructor() {}
+
+  private static createConnection = (): Promise<DatabaseConnection> => {
     return new Promise(async (resolve, reject) => {
       const options: MongoClientOptions = {
         useNewUrlParser: true,
@@ -32,12 +36,13 @@ export default class DatabaseService {
 
       const { DB_URI } = env;
       if (DB_URI == null || DB_URI.trim() === "")
-        return reject("DB_URI is empty");
+        return reject("DB_URI is null or empty");
 
       try {
+        const { instance } = DatabaseService;
         const connection = await mongoose.createConnection(DB_URI, options);
-        DatabaseService.instance._connection = connection;
-        DatabaseService.instance._sessionStore = new MongoStore({
+        instance._connection = connection;
+        instance._sessionStore = new MongoStore({
           collectionName: "sessions",
           client: connection.getClient(),
         });
@@ -48,14 +53,13 @@ export default class DatabaseService {
     });
   };
 
-  public static connect = (): Promise<DbConnection> => {
+  public static connect = (): Promise<DatabaseConnection> => {
     console.log("Connecting to database...");
 
     return new Promise(async (resolve, reject) => {
-      const { connection } = DatabaseService.instance;
-      if (connection !== null) {
+      if (DatabaseService.connection !== null) {
         console.log("Successfully connected using an existing connection");
-        return resolve(connection);
+        return resolve(DatabaseService.connection);
       }
 
       try {
@@ -68,4 +72,23 @@ export default class DatabaseService {
       }
     });
   };
+
+  public static getModel<T extends DatabaseSchemas.Document>(): Promise<
+    mongoose.Model<T, {}>
+  > {
+    return new Promise((resolve, reject) => {
+      return reject();
+    });
+  }
+}
+
+export namespace DatabaseSchemas {
+  export interface Document extends mongoose.Document {}
+
+  export interface User extends Document {
+    id: string;
+    username: string;
+    hash: string;
+    salt: string;
+  }
 }
