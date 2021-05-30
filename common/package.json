@@ -5,7 +5,8 @@
   "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "gulp"
+    "build": "(gulp cleanOutputDirectories && gulp generateTypescriptFiles && gulp cleanLocalJsonSchemas && gulp generateJsonSchemas)",
+    "dev": "(npm run build && gulp)"
   },
   "keywords": [],
   "author": "Maxime Manseau",

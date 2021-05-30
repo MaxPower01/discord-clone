@@ -186,6 +186,8 @@ const watchTypescriptFiles = () => {
 exports.default = watchTypescriptFiles;
 exports.cleanOutputDirectories = cleanOutputDirectories;
 exports.generateTypescriptFiles = generateTypescriptFiles;
+exports.cleanLocalJsonSchemas = cleanLocalJsonSchemas;
+exports.generateJsonSchemas = generateJsonSchemas;
 // exports.setDevelopmentEnvironment = series(
 //   cleanDotEnvFiles,
 //   generateDevEnvFiles

@@ -7,8 +7,8 @@ const express_1 = require("express");
 const express_session_1 = __importDefault(require("express-session"));
 const cors_1 = __importDefault(require("cors"));
 const passport_1 = __importDefault(require("passport"));
-const passport_local_1 = require("passport-local");
 const env_1 = __importDefault(require("../env"));
+const passport_local_1 = require("passport-local");
 const database_service_1 = require("./database-service");
 const password_service_1 = __importDefault(require("./password-service"));
 const routes_1 = require("../common/enums/routes");
@@ -65,33 +65,42 @@ class RouterService {
         router.use(passport.session());
     }
     static async configPassport(passport) {
-        const UserModel = await database_service_1.DatabaseService.getModel();
-        const strategy = new passport_local_1.Strategy(async (username, password, cb) => {
-            try {
-                const user = await UserModel.findOne({ username });
-                if (user === null)
+        // TODO : Unhandled promise rejection
+        try {
+            const { UserModel } = database_service_1.DatabaseService;
+            // const UserModel = await DatabaseService.getModel<DatabaseSchema.User>();
+            const strategy = new passport_local_1.Strategy(async (username, password, cb) => {
+                UserModel.findOne({ username })
+                    .then(async (user) => {
+                    if (user === null)
+                        return cb(null, null);
+                    const passwordHashIsValid = await password_service_1.default.verifyPasswordHash(password, user.hash, user.salt);
+                    if (passwordHashIsValid)
+                        return cb(null, user);
                     return cb(null, null);
-                const validPassword = password_service_1.default.validatePassword(password, user.hash, user.salt);
-                if (validPassword === true)
+                })
+                    .catch((error) => {
+                    console.log(error);
+                    return cb(error, null);
+                });
+            });
+            passport.use(strategy);
+            passport.serializeUser((user, cb) => cb(null, user.id));
+            passport.deserializeUser(async (id, cb) => {
+                UserModel.findById(id)
+                    .then((user) => {
                     return cb(null, user);
-                return cb(null, null);
-            }
-            catch (error) {
-                return cb(error, null);
-            }
-        });
-        passport.use(strategy);
-        passport.serializeUser((user, cb) => cb(null, user.id));
-        passport.deserializeUser(async (id, cb) => {
-            try {
-                const user = await UserModel.findById(id);
-                return cb(null, user);
-            }
-            catch (error) {
-                console.log(error);
-                return cb(error, null);
-            }
-        });
+                })
+                    .catch((error) => {
+                    console.log(error);
+                    return cb(error, null);
+                });
+            });
+        }
+        catch (error) {
+            console.log(error);
+            process.exit(1);
+        }
     }
     static registerRoutes() {
         const { baseRouter: router } = RouterService;

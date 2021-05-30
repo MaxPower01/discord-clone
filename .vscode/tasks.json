@@ -30,6 +30,15 @@
 			"problemMatcher": [],
 			"label": "npm: dev - api",
 			"detail": "(tsc) && (concurrently \"tsc --watch\" \"nodemon dist/main.js\")"
+		},
+		{
+			"type": "npm",
+			"script": "build",
+			"path": "common/",
+			"group": "build",
+			"problemMatcher": [],
+			"label": "npm: build - common",
+			"detail": "(gulp cleanOutputDirectories && gulp generateTypescriptFiles && gulp cleanLocalJsonSchemas && gulp generateJsonSchemas)"
 		}
 	]
 }

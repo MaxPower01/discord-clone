@@ -25,10 +25,32 @@ class DatabaseService {
         const { instance } = DatabaseService;
         return instance._sessionStore;
     }
-    static getModel() {
-        return new Promise((resolve, reject) => {
-            return reject();
-        });
+    static get UserModel() {
+        const { instance, connection } = DatabaseService;
+        if (connection === null)
+            throw new Error("Database connection is null");
+        if (instance._UserModel == null) {
+            const schema = new mongoose_1.default.Schema({
+                id: {
+                    type: String,
+                    required: true,
+                },
+                username: {
+                    type: String,
+                    required: true,
+                },
+                hash: {
+                    type: String,
+                    required: true,
+                },
+                salt: {
+                    type: String,
+                    required: true,
+                },
+            });
+            instance._UserModel = connection.model("User", schema);
+        }
+        return instance._UserModel;
     }
 }
 exports.DatabaseService = DatabaseService;

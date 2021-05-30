@@ -73,20 +73,56 @@ export class DatabaseService {
     });
   };
 
-  public static getModel<T extends DatabaseSchemas.Document>(): Promise<
-    mongoose.Model<T, {}>
-  > {
-    return new Promise((resolve, reject) => {
-      return reject();
-    });
+  private _UserModel: mongoose.Model<DatabaseSchema.User, {}> | undefined;
+  public static get UserModel(): mongoose.Model<DatabaseSchema.User, {}> {
+    const { instance, connection } = DatabaseService;
+    if (connection === null) throw new Error("Database connection is null");
+    if (instance._UserModel == null) {
+      const schema = new mongoose.Schema({
+        id: {
+          type: String,
+          required: true,
+        },
+        username: {
+          type: String,
+          required: true,
+        },
+        hash: {
+          type: String,
+          required: true,
+        },
+        salt: {
+          type: String,
+          required: true,
+        },
+      });
+
+      instance._UserModel = connection.model<DatabaseSchema.User>(
+        "User",
+        schema
+      );
+    }
+    return instance._UserModel;
   }
+
+  // public static getModel<T extends DatabaseSchema.Document>(): Promise<
+  //   mongoose.Model<T, {}>
+  // > {
+  //   return new Promise((resolve, reject) => {
+  //     try {
+  //     } catch (error) {
+  //       return reject();
+  //     }
+  //   });
+  // }
 }
 
-export namespace DatabaseSchemas {
-  export interface Document extends mongoose.Document {}
+export namespace DatabaseSchema {
+  export interface Document extends mongoose.Document {
+    id: string;
+  }
 
   export interface User extends Document {
-    id: string;
     username: string;
     hash: string;
     salt: string;
