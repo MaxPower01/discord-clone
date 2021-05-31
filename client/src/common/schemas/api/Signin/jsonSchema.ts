@@ -1,1 +1,1 @@
-export const schema = {"type":"object","properties":{"username":{"type":"string"},"password":{"type":"string"}},"required":["password","username"],"$schema":"http://json-schema.org/draft-07/schema#"}
+export const schema = { type: "object", properties: { username: { type: "string" }, password: { type: "string" } }, required: ["password", "username"], $schema: "http://json-schema.org/draft-07/schema#" };

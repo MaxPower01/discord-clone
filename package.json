@@ -5,7 +5,7 @@
   "main": "main.js",
   "scripts": {
     "install": "(npm install -g typescript) && (npm install -g gulp-cli) && (npm install -g nodemon) && (cd client && npm install) && (cd ../common && npm install) && (cd ../api && npm install)",
-    "dev": "(concurrently  \"vue ui\" \"cd common && npm run dev\" \"cd api && npm run dev\" \"cd client && npm run dev\" )",
+    "dev": "(concurrently  \"cd common && npm run dev\" \"cd api && npm run dev\" \"cd client && npm run dev\" )",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

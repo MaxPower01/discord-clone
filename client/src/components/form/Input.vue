@@ -15,7 +15,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue"
+import { defineComponent } from "vue";
 
 export default defineComponent({
   name: "Input",
@@ -30,5 +30,5 @@ export default defineComponent({
       required: true
     }
   }
-})
+});
 </script>
