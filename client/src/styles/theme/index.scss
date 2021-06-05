@@ -1,0 +1,77 @@
+@use "_palette";
+
+:root {
+    --color-neutral--layer-0: #{palette.$dark-gray-700};
+    --color-neutral--layer-1: #{palette.$dark-gray-600};
+    --color-neutral--layer-2: #{palette.$dark-gray-500};
+    --color-neutral--layer-3: #{palette.$dark-gray-400};
+    --color-neutral--layer-4: #{palette.$dark-gray-300};
+    --color-neutral--layer-5: #{palette.$dark-gray-200};
+    --on-color-neutral: #{palette.$light-gray-100};
+
+    --color-primary-300: #{palette.$teal-300};
+    --color-primary-400: #{palette.$teal-400};
+    --color-primary-500: #{palette.$teal-500};
+    --color-primary-600: #{palette.$teal-600};
+    --color-primary-700: #{palette.$teal-700};
+    --on-color-primary-300: #{palette.$dark-gray-700};
+    --on-color-primary-400: #{palette.$light-gray-100};
+    --on-color-primary-500: #{palette.$light-gray-100};
+    --on-color-primary-600: #{palette.$light-gray-100};
+    --on-color-primary-700: #{palette.$light-gray-100};
+
+    --color-success-300: #{palette.$green-300};
+    --color-success-400: #{palette.$green-400};
+    --color-success-500: #{palette.$green-500};
+    --color-success-600: #{palette.$green-600};
+    --color-success-700: #{palette.$green-700};
+    --on-color-success-300: #{palette.$dark-gray-700};
+    --on-color-success-400: #{palette.$dark-gray-700};
+    --on-color-success-500: #{palette.$dark-gray-700};
+    --on-color-success-600: #{palette.$light-gray-100};
+    --on-color-success-700: #{palette.$light-gray-100};
+
+    --color-warning-300: #{palette.$amber-300};
+    --color-warning-400: #{palette.$amber-400};
+    --color-warning-500: #{palette.$amber-500};
+    --color-warning-600: #{palette.$amber-600};
+    --color-warning-700: #{palette.$amber-700};
+    --on-color-warning-300: #{palette.$dark-gray-700};
+    --on-color-warning-400: #{palette.$dark-gray-700};
+    --on-color-warning-500: #{palette.$dark-gray-700};
+    --on-color-warning-600: #{palette.$dark-gray-700};
+    --on-color-warning-700: #{palette.$dark-gray-700};
+
+    --color-danger-300: #{palette.$deep-orange-300};
+    --color-danger-400: #{palette.$deep-orange-400};
+    --color-danger-500: #{palette.$deep-orange-500};
+    --color-danger-600: #{palette.$deep-orange-600};
+    --color-danger-700: #{palette.$deep-orange-700};
+    --on-color-danger-300: #{palette.$dark-gray-700};
+    --on-color-danger-400: #{palette.$dark-gray-700};
+    --on-color-danger-500: #{palette.$light-gray-100};
+    --on-color-danger-600: #{palette.$light-gray-100};
+    --on-color-danger-700: #{palette.$light-gray-100};
+}
+
+[data-theme="dark"] {
+    --color-neutral--layer-0: #{palette.$dark-gray-700};
+    --color-neutral--layer-1: #{palette.$dark-gray-600};
+    --color-neutral--layer-2: #{palette.$dark-gray-500};
+    --color-neutral--layer-3: #{palette.$dark-gray-400};
+    --color-neutral--layer-4: #{palette.$dark-gray-300};
+    --color-neutral--layer-5: #{palette.$dark-gray-200};
+    --on-color-neutral: #{palette.$light-gray-100};
+}
+
+[data-theme="light"] {
+    --color-neutral--layer-0: #{palette.$light-gray-100};
+    --color-neutral--layer-1: #{palette.$light-gray-200};
+    --color-neutral--layer-2: #{palette.$light-gray-300};
+    --color-neutral--layer-3: #{palette.$light-gray-400};
+    --color-neutral--layer-4: #{palette.$light-gray-500};
+    --color-neutral--layer-5: #{palette.$light-gray-600};
+    --on-color-neutral: #{palette.$dark-gray-700};
+}
+
+
