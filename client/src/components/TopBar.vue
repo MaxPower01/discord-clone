@@ -1,24 +1,25 @@
 <template>
-  <el-menu
-    class="el-menu-demo"
-    mode="horizontal"
-    :router="true"
-    :default-active="activeTab"
-    @select="handleSelect"
-  >
-    <el-menu-item index="/">
-      Accueil
-    </el-menu-item>
-    <el-menu-item index="/about">
-      À propos
-    </el-menu-item>
-    <el-menu-item index="/signin">
-      Connexion
-    </el-menu-item>
-    <el-menu-item index="/signup">
-      Créer un compte
-    </el-menu-item>
-  </el-menu>
+  <nav>
+    <el-menu
+      class="el-menu-demo"
+      mode="horizontal"
+      :router="true"
+      :default-active="activeTab"
+    >
+      <el-menu-item index="/">
+        Accueil
+      </el-menu-item>
+      <el-menu-item index="/about">
+        À propos
+      </el-menu-item>
+      <el-menu-item index="/signin">
+        Connexion
+      </el-menu-item>
+      <el-menu-item index="/signup">
+        Créer un compte
+      </el-menu-item>
+    </el-menu>
+  </nav>
 </template>
 
 <script lang="ts">
@@ -31,16 +32,6 @@ export default defineComponent({
       activeTab: ""
     };
   },
-  setup(props) {
-    function handleSelect(index: string, indexPath: string[]) {
-      console.log(index);
-      console.log(indexPath);
-    }
-
-    return {
-      handleSelect
-    };
-  },
   watch: {
     $route(newRoute, oldRoute) {
       this.activeTab = newRoute.path;
@@ -48,3 +39,11 @@ export default defineComponent({
   }
 });
 </script>
+
+<style lang="scss" scoped>
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+</style>

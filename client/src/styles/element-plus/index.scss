@@ -1,1 +1,25 @@
 @import "_variables";
+
+.el-menu.el-menu--horizontal {
+    border-bottom: none;
+}
+
+.el-menu--horizontal>.el-menu-item:not(.is-disabled):hover,
+.el-menu--horizontal>.el-menu-item:not(.is-disabled):focus {
+    background-color: mix($--color-white, $dark-theme-color-neutral--layer-1, 5%);
+}
+
+.el-input__inner::placeholder {
+    opacity: 0.5;
+}
+
+.el-input__inner, 
+.el-input__inner:hover {
+    background-color: $dark-theme-color-neutral--layer-1;
+    background-color: transparent;
+    border-color: $dark-theme-color-neutral--layer-2;
+}
+
+.el-input__inner:focus {
+    border-color: $theme-color-primary-500;
+}

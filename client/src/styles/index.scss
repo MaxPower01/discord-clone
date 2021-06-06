@@ -1,6 +1,7 @@
 @use "_theme" as *;
 @import "reset";
 @import "element-plus/index";
+@import "fonts";
 
 :root {
     --color-neutral--layer-0: #{$dark-theme-color-neutral--layer-0};
@@ -105,7 +106,9 @@
 }
 
 body {
+    font-family: "Nunito Sans", sans-serif;
     margin: 0;
     background-color: var(--color-neutral--layer-0);
+    color: var(--color-on-neutral);
 }
 

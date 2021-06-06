@@ -1,32 +1,47 @@
 <template>
-  <h1>Signup</h1>
-  <form @submit.prevent="submitForm">
-    <Input
-      v-model="formData.username"
-      :label="inputLabel.username"
-      type="username"
-    />
-    <Input v-model="formData.email" :label="inputLabel.email" type="email" />
-    <Input
-      v-model="formData.password"
-      :label="inputLabel.password"
-      type="password"
-    />
-    <Input
-      v-model="formData.confirmPassword"
-      :label="inputLabel.confirmPassword"
-      type="password"
-    />
-    <button type="submit">Submit</button>
-  </form>
+  <el-form ref="form">
+    <el-form-item :label="inputLabel.username">
+      <el-input v-model="form.username" :placeholder="inputLabel.username">
+      </el-input>
+    </el-form-item>
+
+    <el-form-item :label="inputLabel.email">
+      <el-input
+        v-model="form.email"
+        :placeholder="inputLabel.email"
+        type="email"
+      >
+      </el-input>
+    </el-form-item>
+
+    <el-form-item :label="inputLabel.password">
+      <el-input
+        v-model="form.password"
+        :placeholder="inputLabel.password"
+        type="password"
+      >
+      </el-input>
+    </el-form-item>
+
+    <el-form-item :label="inputLabel.confirmPassword">
+      <el-input
+        v-model="form.confirmPassword"
+        :placeholder="inputLabel.confirmPassword"
+        type="password"
+      >
+      </el-input>
+    </el-form-item>
+
+    <el-form-item>
+      <el-button type="primary" @click="submitForm">Créer un compte</el-button>
+    </el-form-item>
+  </el-form>
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import Input from "../components/form/Input.vue";
 
 export default defineComponent({
-  components: { Input },
   data() {
     return {
       inputLabel: {
@@ -35,7 +50,7 @@ export default defineComponent({
         password: "Password",
         confirmPassword: "Confirm password"
       },
-      formData: {
+      form: {
         username: "",
         email: "",
         password: "",
@@ -43,12 +58,13 @@ export default defineComponent({
       }
     };
   },
-  setup() {
-    const submitForm = () => console.log("Submitting form");
-
-    return {
-      submitForm
-    };
+  methods: {
+    submitForm() {
+      console.log("Submitting form...");
+      console.log(this.form);
+    }
   }
 });
 </script>
+
+<style lang="scss" scoped></style>

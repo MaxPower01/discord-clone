@@ -1,6 +1,9 @@
 <template>
-  <top-bar />
-  <router-view />
+  <TopBar />
+
+  <main>
+    <RouterView />
+  </main>
 </template>
 
 <script lang="ts">
@@ -14,3 +17,9 @@ export default defineComponent({
   }
 });
 </script>
+
+<style lang="scss" scoped>
+main {
+  padding: 1em;
+}
+</style>

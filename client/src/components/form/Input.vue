@@ -3,15 +3,8 @@
   <el-input
     v-bind="$attrs"
     :value="modelValue"
-    :placeholder="label"
     @input="$emit('update:modelValue', $event.target.value)"
-  ></el-input>
-  <!-- <input
-    v-bind="$attrs"
-    :value="modelValue"
-    :placeholder="label"
-    @input="$emit('update:modelValue', $event.target.value)"
-  /> -->
+  />
 </template>
 
 <script lang="ts">
@@ -24,9 +17,12 @@ export default defineComponent({
       type: String,
       default: ""
     },
+    // placeholder: {
+    //   type: String,
+    //   default: ""
+    // },
     modelValue: {
       type: [String, Number],
-      default: "",
       required: true
     }
   }
