@@ -1,5 +1,6 @@
 @use "_theme" as *;
-@import "element-plus/index.scss";
+@import "reset";
+@import "element-plus/index";
 
 :root {
     --color-neutral--layer-0: #{$dark-theme-color-neutral--layer-0};
@@ -104,6 +105,7 @@
 }
 
 body {
+    margin: 0;
     background-color: var(--color-neutral--layer-0);
 }
 
