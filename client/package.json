@@ -13,8 +13,7 @@
   "dependencies": {
     "ajv": "^8.5.0",
     "core-js": "^3.6.5",
-    "primeicons": "^4.1.0",
-    "primevue": "^3.3.5",
+    "element-plus": "^1.0.2-beta.44",
     "register-service-worker": "^1.7.1",
     "vue": "^3.0.0",
     "vue-class-component": "^8.0.0-0",
