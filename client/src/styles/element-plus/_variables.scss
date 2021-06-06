@@ -1,0 +1,27 @@
+@use "theme" as *;
+
+$--color-primary: $theme-color-primary-500;
+$--button-primary-font-color: $theme-color-on-primary-500;
+
+$--color-success: $theme-color-success-500;
+$--button-success-font-color: $theme-color-on-success-500;
+
+$--color-warning: $theme-color-warning-500;
+$--button-warning-font-color: $theme-color-on-warning-500;
+
+$--color-danger: $theme-color-danger-500;
+$--button-danger-font-color: $theme-color-on-danger-500;
+
+$--color-info: $dark-theme-color-neutral--layer-5;
+$--button-info-font-color: $dark-theme-color-on-neutral;
+
+$--color-text-primary: $theme-color-on-primary-500;
+$--color-text-regular: $dark-theme-color-on-neutral;
+
+// $--button-default-background-color: $dark-theme-color-neutral--layer-5;
+// $--button-default-border-color: $dark-theme-color-neutral--layer-5;
+// $--button-default-font-color: $dark-theme-color-on-neutral;
+
+$--font-path: '~element-plus/lib/theme-chalk/fonts';
+
+@import "~element-plus/packages/theme-chalk/src/index";

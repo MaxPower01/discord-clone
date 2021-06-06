@@ -1,0 +1,108 @@
+@use "_palette" as *;
+
+// Primary
+$theme-color-primary-50: $teal-50;
+$theme-color-primary-100: $teal-100;
+$theme-color-primary-200: $teal-200;
+$theme-color-primary-300: $teal-300;
+$theme-color-primary-400: $teal-400;
+$theme-color-primary-500: $teal-500;
+$theme-color-primary-600: $teal-600;
+$theme-color-primary-700: $teal-700;
+$theme-color-primary-800: $teal-800;
+$theme-color-primary-900: $teal-900;
+$theme-color-on-primary-50: $dark-gray-700;
+$theme-color-on-primary-100: $dark-gray-700;
+$theme-color-on-primary-200: $dark-gray-700;
+$theme-color-on-primary-300: $dark-gray-700;
+$theme-color-on-primary-400: $light-gray-100;
+$theme-color-on-primary-500: $light-gray-100;
+$theme-color-on-primary-600: $light-gray-100;
+$theme-color-on-primary-700: $light-gray-100;
+$theme-color-on-primary-800: $light-gray-100;
+$theme-color-on-primary-900: $light-gray-100;
+
+// Success
+$theme-color-success-50: $green-50;
+$theme-color-success-100: $green-100;
+$theme-color-success-200: $green-200;
+$theme-color-success-300: $green-300;
+$theme-color-success-400: $green-400;
+$theme-color-success-500: $green-500;
+$theme-color-success-600: $green-600;
+$theme-color-success-700: $green-700;
+$theme-color-success-800: $green-800;
+$theme-color-success-900: $green-900;
+$theme-color-on-success-50: $dark-gray-700;
+$theme-color-on-success-100: $dark-gray-700;
+$theme-color-on-success-200: $dark-gray-700;
+$theme-color-on-success-300: $dark-gray-700;
+$theme-color-on-success-400: $dark-gray-700;
+$theme-color-on-success-500: $dark-gray-700;
+$theme-color-on-success-600: $light-gray-100;
+$theme-color-on-success-700: $light-gray-100;
+$theme-color-on-success-800: $light-gray-100;
+$theme-color-on-success-900: $light-gray-100;
+
+// Warning
+$theme-color-warning-50: $amber-50;
+$theme-color-warning-100: $amber-100;
+$theme-color-warning-200: $amber-200;
+$theme-color-warning-300: $amber-300;
+$theme-color-warning-400: $amber-400;
+$theme-color-warning-500: $amber-500;
+$theme-color-warning-600: $amber-600;
+$theme-color-warning-700: $amber-700;
+$theme-color-warning-800: $amber-800;
+$theme-color-warning-900: $amber-900;
+$theme-color-on-warning-50: $dark-gray-700;
+$theme-color-on-warning-100: $dark-gray-700;
+$theme-color-on-warning-200: $dark-gray-700;
+$theme-color-on-warning-300: $dark-gray-700;
+$theme-color-on-warning-400: $dark-gray-700;
+$theme-color-on-warning-500: $dark-gray-700;
+$theme-color-on-warning-600: $dark-gray-700;
+$theme-color-on-warning-700: $dark-gray-700;
+$theme-color-on-warning-800: $dark-gray-700;
+$theme-color-on-warning-900: $dark-gray-700;
+
+// Danger
+$theme-color-danger-50: $deep-orange-50;
+$theme-color-danger-100: $deep-orange-100;
+$theme-color-danger-200: $deep-orange-200;
+$theme-color-danger-300: $deep-orange-300;
+$theme-color-danger-400: $deep-orange-400;
+$theme-color-danger-500: $deep-orange-500;
+$theme-color-danger-600: $deep-orange-600;
+$theme-color-danger-700: $deep-orange-700;
+$theme-color-danger-800: $deep-orange-800;
+$theme-color-danger-900: $deep-orange-900;
+$theme-color-on-danger-50: $dark-gray-700;
+$theme-color-on-danger-100: $dark-gray-700;
+$theme-color-on-danger-200: $dark-gray-700;
+$theme-color-on-danger-300: $dark-gray-700;
+$theme-color-on-danger-400: $dark-gray-700;
+$theme-color-on-danger-500: $light-gray-100;
+$theme-color-on-danger-600: $light-gray-100;
+$theme-color-on-danger-700: $light-gray-100;
+$theme-color-on-danger-800: $light-gray-100;
+$theme-color-on-danger-900: $light-gray-100;
+
+// Neutral (dark)
+$dark-theme-color-neutral--layer-0: $dark-gray-700;
+$dark-theme-color-neutral--layer-1: $dark-gray-600;
+$dark-theme-color-neutral--layer-2: $dark-gray-500;
+$dark-theme-color-neutral--layer-3: $dark-gray-400;
+$dark-theme-color-neutral--layer-4: $dark-gray-300;
+$dark-theme-color-neutral--layer-5: $dark-gray-200;
+$dark-theme-color-on-neutral: $light-gray-100;
+
+// Neutral (light)
+$light-theme-color-neutral--layer-0: $light-gray-100;
+$light-theme-color-neutral--layer-1: $light-gray-200;
+$light-theme-color-neutral--layer-2: $light-gray-300;
+$light-theme-color-neutral--layer-3: $light-gray-400;
+$light-theme-color-neutral--layer-4: $light-gray-500;
+$light-theme-color-neutral--layer-5: $light-gray-600;
+$light-theme-color-on-neutral: $dark-gray-700;
+
