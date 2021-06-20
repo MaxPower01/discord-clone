@@ -1,10 +1,9 @@
-import JsonResponse from "../common/typings/api/json-response";
+import JsonResponse from "../common/typings/json-response";
 
 interface CreateJsonResponseParameters {
   success: boolean;
   msg?: string | null;
   error?: any | null;
-  errors?: any | null;
   extraParams?: { name: string; value: any }[] | null;
 }
 
@@ -14,12 +13,12 @@ export default class JsonService {
   public static createJsonResponse(
     params: CreateJsonResponseParameters
   ): JsonResponse {
-    const { success, msg, error, errors, extraParams } = params;
+    const { success, msg, error, extraParams } = params;
 
     let result: JsonResponse = {
       success,
-      msg: msg ?? error,
-      errors,
+      msg: msg ?? null,
+      error,
     };
 
     if (extraParams !== null && extraParams !== undefined) {
