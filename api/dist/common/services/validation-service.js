@@ -5,7 +5,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-// Path : C:\Users\mmaxi\Documents\GitHub\discord-clone\common\src\services\validation-service.ts
+// Path : D:\repos\discord-clone\common\src\services\validation-service.ts
 const ajv_1 = __importDefault(require("ajv"));
 class ValidationService {
     constructor() {

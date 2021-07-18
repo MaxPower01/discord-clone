@@ -3,7 +3,7 @@
 // Any changes made to this file will be lost when it is generated again.
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ApiRoute = exports.ClientRoute = void 0;
-// Path : C:\Users\mmaxi\Documents\GitHub\discord-clone\common\src\enums\routes.ts
+// Path : D:\repos\discord-clone\common\src\enums\routes.ts
 var ClientRoute;
 (function (ClientRoute) {
     ClientRoute["Signup"] = "/signup";
