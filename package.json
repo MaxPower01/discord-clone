@@ -4,8 +4,8 @@
   "description": "",
   "main": "main.js",
   "scripts": {
-    "install": "(npm install -g typescript) && (npm install -g gulp-cli) && (npm install -g nodemon) && (cd client && npm install) && (cd ../common && npm install) && (cd ../api && npm install)",
-    "dev": "(concurrently  \"cd common && npm run dev\" \"cd api && npm run dev\" \"cd client && npm run dev\" )",
+    "install": "(npm install -g typescript) && (npm install -g gulp-cli) && (npm install -g nodemon) && (cd ../common && npm install) && (cd ../api && npm install) && (cd ../client/web && npm install) ",
+    "dev": "(concurrently  \"cd common && npm run dev\" \"cd api && npm run dev\" \"cd client/web && npm run dev\" )",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

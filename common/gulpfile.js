@@ -13,7 +13,7 @@ dotenv.config();
 const srcDir = "src",
   apiRootDir = "../api",
   apiCommonDir = `${apiRootDir}/src/common`,
-  clientRootDir = "../client",
+  clientRootDir = "../client/web",
   clientCommonDir = `${clientRootDir}/src/common`,
   schemasDir = "schemas",
   schemaFileName = "schema",
