@@ -1,0 +1,10 @@
+@use "../../styles/theme" as t;
+
+.root {
+    width: min(90%, 25em);
+}
+
+.link {
+    color: t.$theme-color-primary-500;
+    font-weight: bold;
+}

@@ -17,28 +17,17 @@
 		},
 		{
 			"type": "npm",
-			"script": "dev",
-			"path": "common/",
+			"script": "dev:client",
 			"problemMatcher": [],
-			"label": "npm: dev - common",
-			"detail": "gulp"
+			"label": "npm: dev:client",
+			"detail": "(concurrently \"cd client/web && npm run dev\" )"
 		},
 		{
 			"type": "npm",
-			"script": "dev",
-			"path": "api/",
+			"script": "dev:common",
 			"problemMatcher": [],
-			"label": "npm: dev - api",
-			"detail": "(tsc) && (concurrently \"tsc --watch\" \"nodemon dist/main.js\")"
-		},
-		{
-			"type": "npm",
-			"script": "build",
-			"path": "common/",
-			"group": "build",
-			"problemMatcher": [],
-			"label": "npm: build - common",
-			"detail": "(gulp cleanOutputDirectories && gulp generateTypescriptFiles && gulp cleanLocalJsonSchemas && gulp generateJsonSchemas)"
+			"label": "npm: dev:common",
+			"detail": "(concurrently \"cd common && npm run dev\" )"
 		}
 	]
 }

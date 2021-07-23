@@ -4,6 +4,7 @@
 // Path : D:\Documents\GitHub\discord-clone\common\src\enums\routes.ts
 
 export enum ClientRoute {
+  Home = "/home",
   Signup = "/signup",
   Signin = "/signin",
 }

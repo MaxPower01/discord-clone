@@ -2,6 +2,13 @@ import { PaletteOptions } from "@material-ui/core/styles/createPalette";
 import {
   ThemeOptions, createTheme
 } from "@material-ui/core";
+import teal from "@material-ui/core/colors/teal";
+import green from "@material-ui/core/colors/green";
+import amber from "@material-ui/core/colors/amber";
+import deepOrange from "@material-ui/core/colors/deepOrange";
+import blueGrey from "@material-ui/core/colors/blueGrey";
+import cyan from "@material-ui/core/colors/cyan";
+import gray from "@material-ui/core/colors/grey";
 
 
 declare module "@material-ui/core/styles/createPalette" {
@@ -13,15 +20,15 @@ declare module "@material-ui/core/styles/createPalette" {
   }
 }
 
-const mainColor = {
-  "600": "#004E89",
-  "500": "#1A659E",
-};
+// const mainColor = {
+//   "600": "#004E89",
+//   "500": "#1A659E",
+// };
 
-const secondaryColor = {
-  "600": "#FF6B35",
-  "500": "#F7C59F",
-};
+// const secondaryColor = {
+//   "600": "#FF6B35",
+//   "500": "#F7C59F",
+// };
 
 const neutralColor = {
   "800": "#0A0D12",
@@ -35,16 +42,12 @@ const neutralColor = {
 
 const darkPalette: PaletteOptions = {
   type: "dark",
-  primary: {
-    dark: mainColor["600"],
-    main: mainColor["500"],
-    contrastText: "#fff",
-  },
-  secondary: {
-    dark: secondaryColor["600"],
-    main: secondaryColor["500"],
-    contrastText: "#fff",
-  },
+  primary: teal,
+  secondary: cyan,
+  success: green,
+  warning: amber,
+  error: deepOrange,
+  info: gray,
   neutral: {
     "800": neutralColor["800"],
     "700": neutralColor["700"],
