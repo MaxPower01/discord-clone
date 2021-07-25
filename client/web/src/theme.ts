@@ -1,7 +1,5 @@
 import { PaletteOptions } from "@material-ui/core/styles/createPalette";
-import {
-  ThemeOptions, createTheme
-} from "@material-ui/core";
+import { ThemeOptions, createTheme } from "@material-ui/core";
 import teal from "@material-ui/core/colors/teal";
 import green from "@material-ui/core/colors/green";
 import amber from "@material-ui/core/colors/amber";
@@ -9,7 +7,6 @@ import deepOrange from "@material-ui/core/colors/deepOrange";
 import blueGrey from "@material-ui/core/colors/blueGrey";
 import cyan from "@material-ui/core/colors/cyan";
 import gray from "@material-ui/core/colors/grey";
-
 
 declare module "@material-ui/core/styles/createPalette" {
   interface Palette {
@@ -30,33 +27,111 @@ declare module "@material-ui/core/styles/createPalette" {
 //   "500": "#F7C59F",
 // };
 
-const neutralColor = {
-  "800": "#0A0D12",
-  "700": "#0E151B",
-  "600": "#1E2327",
-  "500": "#272C30",
-  "400": "#3B3C44",
-  "300": "#4F4D50",
-  "200": "#5D6267",
+const style = getComputedStyle(document.body);
+
+const primaryColor = {
+  50: style.getPropertyValue("--color-primary-50").trim(),
+  100: style.getPropertyValue("--color-primary-100").trim(),
+  200: style.getPropertyValue("--color-primary-200").trim(),
+  300: style.getPropertyValue("--color-primary-300").trim(),
+  400: style.getPropertyValue("--color-primary-400").trim(),
+  500: style.getPropertyValue("--color-primary-500").trim(),
+  600: style.getPropertyValue("--color-primary-600").trim(),
+  700: style.getPropertyValue("--color-primary-700").trim(),
+  800: style.getPropertyValue("--color-primary-800").trim(),
+  900: style.getPropertyValue("--color-primary-900").trim(),
+  A100: style.getPropertyValue("--color-on-primary-100").trim(),
+  A200: style.getPropertyValue("--color-on-primary-200").trim(),
+  A400: style.getPropertyValue("--color-on-primary-400").trim(),
+  A700: style.getPropertyValue("--color-on-primary-700").trim(),
 };
+
+const secondaryColor = {
+  50: style.getPropertyValue("--color-secondary-50").trim(),
+  100: style.getPropertyValue("--color-secondary-100").trim(),
+  200: style.getPropertyValue("--color-secondary-200").trim(),
+  300: style.getPropertyValue("--color-secondary-300").trim(),
+  400: style.getPropertyValue("--color-secondary-400").trim(),
+  500: style.getPropertyValue("--color-secondary-500").trim(),
+  600: style.getPropertyValue("--color-secondary-600").trim(),
+  700: style.getPropertyValue("--color-secondary-700").trim(),
+  800: style.getPropertyValue("--color-secondary-800").trim(),
+  900: style.getPropertyValue("--color-secondary-900").trim(),
+  A100: style.getPropertyValue("--color-on-secondary-100").trim(),
+  A200: style.getPropertyValue("--color-on-secondary-200").trim(),
+  A400: style.getPropertyValue("--color-on-secondary-400").trim(),
+  A700: style.getPropertyValue("--color-on-secondary-700").trim(),
+};
+
+const successColor = {
+  50: style.getPropertyValue("--color-success-50").trim(),
+  100: style.getPropertyValue("--color-success-100").trim(),
+  200: style.getPropertyValue("--color-success-200").trim(),
+  300: style.getPropertyValue("--color-success-300").trim(),
+  400: style.getPropertyValue("--color-success-400").trim(),
+  500: style.getPropertyValue("--color-success-500").trim(),
+  600: style.getPropertyValue("--color-success-600").trim(),
+  700: style.getPropertyValue("--color-success-700").trim(),
+  800: style.getPropertyValue("--color-success-800").trim(),
+  900: style.getPropertyValue("--color-success-900").trim(),
+  A100: style.getPropertyValue("--color-on-success-100").trim(),
+  A200: style.getPropertyValue("--color-on-success-200").trim(),
+  A400: style.getPropertyValue("--color-on-success-400").trim(),
+  A700: style.getPropertyValue("--color-on-success-700").trim(),
+};
+const warningColor = {
+  50: style.getPropertyValue("--color-warning-50").trim(),
+  100: style.getPropertyValue("--color-warning-100").trim(),
+  200: style.getPropertyValue("--color-warning-200").trim(),
+  300: style.getPropertyValue("--color-warning-300").trim(),
+  400: style.getPropertyValue("--color-warning-400").trim(),
+  500: style.getPropertyValue("--color-warning-500").trim(),
+  600: style.getPropertyValue("--color-warning-600").trim(),
+  700: style.getPropertyValue("--color-warning-700").trim(),
+  800: style.getPropertyValue("--color-warning-800").trim(),
+  900: style.getPropertyValue("--color-warning-900").trim(),
+  A100: style.getPropertyValue("--color-on-warning-100").trim(),
+  A200: style.getPropertyValue("--color-on-warning-200").trim(),
+  A400: style.getPropertyValue("--color-on-warning-400").trim(),
+  A700: style.getPropertyValue("--color-on-warning-700").trim(),
+};
+const errorColor = {
+  50: style.getPropertyValue("--color-danger-50").trim(),
+  100: style.getPropertyValue("--color-danger-100").trim(),
+  200: style.getPropertyValue("--color-danger-200").trim(),
+  300: style.getPropertyValue("--color-danger-300").trim(),
+  400: style.getPropertyValue("--color-danger-400").trim(),
+  500: style.getPropertyValue("--color-danger-500").trim(),
+  600: style.getPropertyValue("--color-danger-600").trim(),
+  700: style.getPropertyValue("--color-danger-700").trim(),
+  800: style.getPropertyValue("--color-danger-800").trim(),
+  900: style.getPropertyValue("--color-danger-900").trim(),
+  A100: style.getPropertyValue("--color-on-danger-100").trim(),
+  A200: style.getPropertyValue("--color-on-danger-200").trim(),
+  A400: style.getPropertyValue("--color-on-danger-400").trim(),
+  A700: style.getPropertyValue("--color-on-danger-700").trim(),
+};
+
+const infoColor = gray;
+const neutralColor = gray;
+
+console.log(primaryColor);
+console.log(secondaryColor);
+console.log(successColor);
+console.log(warningColor);
+console.log(errorColor);
+console.log(infoColor);
+console.log(neutralColor);
 
 const darkPalette: PaletteOptions = {
   type: "dark",
-  primary: teal,
-  secondary: cyan,
-  success: green,
-  warning: amber,
-  error: deepOrange,
-  info: gray,
-  neutral: {
-    "800": neutralColor["800"],
-    "700": neutralColor["700"],
-    "600": neutralColor["600"],
-    "500": neutralColor["500"],
-    "400": neutralColor["400"],
-    "300": neutralColor["300"],
-    "200": neutralColor["200"],
-  },
+  primary: primaryColor,
+  secondary: secondaryColor,
+  success: successColor,
+  warning: warningColor,
+  error: errorColor,
+  info: infoColor,
+  neutral: neutralColor,
 };
 
 const darkThemeOptions: ThemeOptions = {

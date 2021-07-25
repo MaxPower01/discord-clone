@@ -6,7 +6,6 @@ import TopBar from "./components/TopBar";
 import Signin from "./views/Signin";
 import Signup from "./views/Signup";
 import Home from "./views/Home";
-import SwipeableTemporaryDrawer from "./components/Drawer";
 
 function App() {
   const loading = false;
