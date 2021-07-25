@@ -1,22 +1,24 @@
-import React from 'react';
+import React from "react";
 import classes from "./App.module.scss";
 import { Router, Switch, PublicRoute, PrivateRoute } from "./Router";
 import { ClientRoute } from "./common/enums/routes";
-import Signin from './views/Signin';
-import Signup from './views/Signup';
-import Home from './views/Home';
+import TopBar from "./components/TopBar";
+import Signin from "./views/Signin";
+import Signup from "./views/Signup";
+import Home from "./views/Home";
+import SwipeableTemporaryDrawer from "./components/Drawer";
 
 function App() {
   const loading = false;
-  const userAuthenticated = false;
+  const userAuthenticated = true;
 
   return (
-   <div className={classes.root}>
+    <div className={classes.root}>
       {loading && <h1>Loading...</h1>}
 
       {!loading && (
         <Router>
-          {/* {userAuthenticated && <TopBar />} */}
+          {userAuthenticated && <TopBar />}
 
           <Switch>
             <PrivateRoute

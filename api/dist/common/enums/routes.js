@@ -6,6 +6,7 @@ exports.ApiRoute = exports.ClientRoute = void 0;
 // Path : D:\Documents\GitHub\discord-clone\common\src\enums\routes.ts
 var ClientRoute;
 (function (ClientRoute) {
+    ClientRoute["Home"] = "/";
     ClientRoute["Signup"] = "/signup";
     ClientRoute["Signin"] = "/signin";
 })(ClientRoute = exports.ClientRoute || (exports.ClientRoute = {}));

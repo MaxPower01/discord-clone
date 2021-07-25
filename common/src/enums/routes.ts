@@ -1,5 +1,5 @@
 export enum ClientRoute {
-  Home = "/home",
+  Home = "/",
   Signup = "/signup",
   Signin = "/signin",
 }

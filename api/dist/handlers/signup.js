@@ -19,7 +19,7 @@ Signup.handlePost = async (req, res) => {
         if (data === null)
             return res.status(400).json(json_service_1.default.createJsonResponse({
                 success: false,
-                errors,
+                error: errors,
             }));
         const { username } = data;
         const { UserModel } = database_service_1.DatabaseService;

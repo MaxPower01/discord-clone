@@ -1,4 +1,4 @@
-import JsonResponse from "../common/typings/json-response";
+import JsonResponse from "../common/typings/api/json-response";
 
 interface CreateJsonResponseParameters {
   success: boolean;

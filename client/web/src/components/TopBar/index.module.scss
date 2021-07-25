@@ -1,0 +1,16 @@
+.root {
+	display: initial;
+}
+
+.logo {
+	width: 2.5em;
+}
+
+.grow {
+	flex-grow: 1;
+}
+
+.drawerContent {
+	min-width: 25vw;
+	max-width: 50vw;
+}

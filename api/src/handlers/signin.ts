@@ -20,7 +20,7 @@ export default class Signin {
         return res.status(400).json(
           JsonService.createJsonResponse({
             success: false,
-            errors,
+            error: errors,
           })
         );
 
