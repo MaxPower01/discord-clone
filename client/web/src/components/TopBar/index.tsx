@@ -31,11 +31,6 @@ function TopBar() {
         return;
       }
 
-      document.body.classList.add("light-theme");
-      const style = getComputedStyle(document.body);
-      const color = style.getPropertyValue("--color-neutral--layer-0");
-      console.log(color);
-
       setDrawerState({ open });
     };
 

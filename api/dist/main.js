@@ -10,8 +10,8 @@ const env_1 = __importDefault(require("./env"));
 database_service_1.DatabaseService.connect()
     .then((dbConnection) => {
     console.log("Initializing app...");
-    router_service_1.default.registerRoutes();
     const app = express_1.default();
+    router_service_1.default.registerRoutes();
     app.use("/api/v1", router_service_1.default.baseRouter);
     const { PORT } = env_1.default;
     app.listen(PORT, () => {

@@ -7,8 +7,10 @@ DatabaseService.connect()
   .then((dbConnection) => {
     console.log("Initializing app...");
 
-    RouterService.registerRoutes();
     const app = express();
+
+    RouterService.registerRoutes();
+
     app.use("/api/v1", RouterService.baseRouter);
 
     const { PORT } = env;
