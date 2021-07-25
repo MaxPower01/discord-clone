@@ -1,3 +1,5 @@
+@use "../../styles/theme" as *;
+
 .root {
 	display: initial;
 }
@@ -9,8 +11,13 @@
 .grow {
 	flex-grow: 1;
 }
+ 
+// .drawer {
+// }
 
 .drawerContent {
-	min-width: 25vw;
+	width: 250px;
 	max-width: 50vw;
+	background-color: var(--color-neutral--layer-1);
+	height: 100%;
 }

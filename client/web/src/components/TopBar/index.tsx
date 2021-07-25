@@ -56,6 +56,7 @@ function TopBar() {
               open={drawerState.open}
               onClose={toggleDrawer(false)}
               onOpen={toggleDrawer(true)}
+              className={classes.drawer}
             >
               <div className={classes.drawerContent}>
                 <h1>TEST</h1>

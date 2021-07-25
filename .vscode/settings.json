@@ -1,0 +1,6 @@
+{
+  "cssVariables.lookupFiles": [
+    // "node_modules/common-ui/dist/CommonUIVariable.css",
+    "client/web/src/styles/index.scss"
+  ]
+}
