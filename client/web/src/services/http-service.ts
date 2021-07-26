@@ -1,10 +1,5 @@
-import axios, {
-  AxiosInstance,
-  AxiosResponse
-} from "axios";
-import {
-  ApiRoute
-} from "../common/enums/routes";
+import axios, { AxiosInstance, AxiosResponse } from "axios";
+import { ApiRoute } from "../common/enums/routes";
 
 export default class HttpService {
   private readonly API_URL = "";
@@ -19,9 +14,7 @@ export default class HttpService {
 
   private _client: AxiosInstance;
   public static get client(): AxiosInstance {
-    const {
-      instance
-    } = HttpService;
+    const { instance } = HttpService;
     return instance._client;
   }
 
@@ -29,10 +22,10 @@ export default class HttpService {
     this._client = axios.create({
       baseURL: this.API_URL,
       withCredentials: true,
-    })
+    });
   }
 
-  public static post(url: ApiRoute, data ? : any): Promise < AxiosResponse < any >> {
+  public static post(url: ApiRoute, data?: any): Promise<AxiosResponse<any>> {
     return new Promise(async (resolve, reject) => {
       try {
         const response = await HttpService.client.post(url, data);

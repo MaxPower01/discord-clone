@@ -8,12 +8,12 @@ import store from "./store";
 import { ThemeProvider } from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import "./styles/index.scss";
-import theme from "./theme";
+import ThemeService from "./services/theme-service";
 
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-      <ThemeProvider theme={theme}>
+      <ThemeProvider theme={ThemeService.createTheme()}>
         <CssBaseline />
         <App />
       </ThemeProvider>
