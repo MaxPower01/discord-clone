@@ -3,13 +3,34 @@
 @import "fonts";
 
 :root {
-    --color-neutral--layer-0: #{$dark-theme-color-neutral--layer-0};
-    --color-neutral--layer-1: #{$dark-theme-color-neutral--layer-1};
-    --color-neutral--layer-2: #{$dark-theme-color-neutral--layer-2};
-    --color-neutral--layer-3: #{$dark-theme-color-neutral--layer-3};
-    --color-neutral--layer-4: #{$dark-theme-color-neutral--layer-4};
-    --color-neutral--layer-5: #{$dark-theme-color-neutral--layer-5};
-    --color-on-neutral: #{$dark-theme-color-on-neutral};
+    --color-neutral-50: #{$dark-theme-color-neutral-50};
+    --color-neutral-100: #{$dark-theme-color-neutral-100};
+    --color-neutral-200: #{$dark-theme-color-neutral-200};
+    --color-neutral-300: #{$dark-theme-color-neutral-300};
+    --color-neutral-400: #{$dark-theme-color-neutral-400};
+    --color-neutral-500: #{$dark-theme-color-neutral-500};
+    --color-neutral-600: #{$dark-theme-color-neutral-600};
+    --color-neutral-700: #{$dark-theme-color-neutral-700};
+    --color-neutral-800: #{$dark-theme-color-neutral-800};
+    --color-neutral-900: #{$dark-theme-color-neutral-900};
+    --color-neutral-A100: #{$dark-theme-color-neutral-A100};
+    --color-neutral-A200: #{$dark-theme-color-neutral-A200};
+    --color-neutral-A400: #{$dark-theme-color-neutral-A400};
+    --color-neutral-A700: #{$dark-theme-color-neutral-A700};
+    --color-on-neutral-50: #{$dark-theme-color-on-neutral};
+    --color-on-neutral-100: #{$dark-theme-color-on-neutral};
+    --color-on-neutral-200: #{$dark-theme-color-on-neutral};
+    --color-on-neutral-300: #{$dark-theme-color-on-neutral};
+    --color-on-neutral-400: #{$dark-theme-color-on-neutral};
+    --color-on-neutral-500: #{$dark-theme-color-on-neutral};
+    --color-on-neutral-600: #{$dark-theme-color-on-neutral};
+    --color-on-neutral-700: #{$dark-theme-color-on-neutral};
+    --color-on-neutral-800: #{$dark-theme-color-on-neutral};
+    --color-on-neutral-900: #{$dark-theme-color-on-neutral};
+    --color-on-neutral-A100: #{$dark-theme-color-on-neutral};
+    --color-on-neutral-A200: #{$dark-theme-color-on-neutral};
+    --color-on-neutral-A400: #{$dark-theme-color-on-neutral};
+    --color-on-neutral-A700: #{$dark-theme-color-on-neutral};
 
     --color-primary-50: #{$theme-color-primary-50};
     --color-primary-100: #{$theme-color-primary-100};
@@ -156,16 +177,38 @@
 }
 
 .light-theme {
-    --color-neutral--layer-0: #{$light-theme-color-neutral--layer-0};
-    --color-neutral--layer-1: #{$light-theme-color-neutral--layer-1};
-    --color-neutral--layer-2: #{$light-theme-color-neutral--layer-2};
-    --color-neutral--layer-3: #{$light-theme-color-neutral--layer-3};
-    --color-neutral--layer-4: #{$light-theme-color-neutral--layer-4};
-    --color-neutral--layer-5: #{$light-theme-color-neutral--layer-5};
-    --color-on-neutral: #{$light-theme-color-on-neutral};
+    // TODO : Add light theme neutral colors
+    --color-neutral-50: #{$dark-theme-color-neutral-50};
+    --color-neutral-100: #{$dark-theme-color-neutral-100};
+    --color-neutral-200: #{$dark-theme-color-neutral-200};
+    --color-neutral-300: #{$dark-theme-color-neutral-300};
+    --color-neutral-400: #{$dark-theme-color-neutral-400};
+    --color-neutral-500: #{$dark-theme-color-neutral-500};
+    --color-neutral-600: #{$dark-theme-color-neutral-600};
+    --color-neutral-700: #{$dark-theme-color-neutral-700};
+    --color-neutral-800: #{$dark-theme-color-neutral-800};
+    --color-neutral-900: #{$dark-theme-color-neutral-900};
+    --color-neutral-A100: #{$dark-theme-color-neutral-A100};
+    --color-neutral-A200: #{$dark-theme-color-neutral-A200};
+    --color-neutral-A400: #{$dark-theme-color-neutral-A400};
+    --color-neutral-A700: #{$dark-theme-color-neutral-A700};
+    --color-on-neutral-50: #{$dark-theme-color-on-neutral};
+    --color-on-neutral-100: #{$dark-theme-color-on-neutral};
+    --color-on-neutral-200: #{$dark-theme-color-on-neutral};
+    --color-on-neutral-300: #{$dark-theme-color-on-neutral};
+    --color-on-neutral-400: #{$dark-theme-color-on-neutral};
+    --color-on-neutral-500: #{$dark-theme-color-on-neutral};
+    --color-on-neutral-600: #{$dark-theme-color-on-neutral};
+    --color-on-neutral-700: #{$dark-theme-color-on-neutral};
+    --color-on-neutral-800: #{$dark-theme-color-on-neutral};
+    --color-on-neutral-900: #{$dark-theme-color-on-neutral};
+    --color-on-neutral-A100: #{$dark-theme-color-on-neutral};
+    --color-on-neutral-A200: #{$dark-theme-color-on-neutral};
+    --color-on-neutral-A400: #{$dark-theme-color-on-neutral};
+    --color-on-neutral-A700: #{$dark-theme-color-on-neutral};
 }
 
-body {
-    background-color: var(--color-neutral--layer-0) !important;
-    color: var(--color-on-neutral) !important;
-}
+// body {
+//     background-color: var(--color-neutral-900) !important;
+//     color: var(--color-on-neutral-900) !important;
+// }
