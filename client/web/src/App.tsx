@@ -8,8 +8,8 @@ import Signup from "./views/Signup";
 import Home from "./views/Home";
 
 function App() {
-  const loading = false;
-  const userAuthenticated = true;
+  const loading = false; // TODO : useState()
+  const userAuthenticated = true; // TODO : useState()
 
   return (
     <div className={classes.root}>
@@ -22,19 +22,12 @@ function App() {
           <Switch>
             <PrivateRoute
               exact // Tells router to exactly match the path of this route
-              authorized={userAuthenticated} // TODO : useState() with authentication to verify that user is loggedIn
+              authorized={userAuthenticated}
               path={ClientRoute.Home}
               component={Home}
             />
-            {/* <PrivateRoute
-              exact
-              authorized={userAuthenticated} // TODO : useState() with authentication to verify that user is loggedIn
-              path={ClientRoute.Tournaments}
-              component={Tournaments}
-            /> */}
             <PublicRoute path={ClientRoute.Signin} component={Signin} />
             <PublicRoute path={ClientRoute.Signup} component={Signup} />
-            {/* <PublicRoute path={ClientRoute.Playground} component={Playground} /> */}
           </Switch>
         </Router>
       )}
